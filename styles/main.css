@@ -1,0 +1,66 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+
+#zen {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#zen-text {
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+}
+
+#copy-btn {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+#copy-btn:hover {
+    background-color: #444;
+}
+
+#facts {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    padding: 1.5rem;
+}
+
+#facts ul {
+    list-style-type: '🐍';
+    padding-left: 2rem;
+}
+
+#facts li {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: #888;
+}
