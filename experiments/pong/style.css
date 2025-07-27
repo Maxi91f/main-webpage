@@ -1,0 +1,26 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars on mobile */
+}
+
+h1 {
+    color: #4CAF50;
+    font-size: 1.5em; /* Adjust for mobile */
+}
+
+canvas {
+    background-color: #000;
+    border: 2px solid #4CAF50;
+    max-width: 90vw; /* Make canvas responsive */
+    max-height: 80vh; /* Make canvas responsive */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+}
