@@ -42,25 +42,57 @@ main {
     background-color: #444;
 }
 
-#facts {
+#experiments {
     background-color: #1e1e1e;
     border: 1px solid #333;
     padding: 1.5rem;
+    margin-top: 2rem;
 }
 
-#facts ul {
-    list-style-type: '🐍';
-    padding-left: 2rem;
+#experiments ul {
+    list-style: disc;
+    margin: 0 0 1rem 1.25rem;
+    padding-left: 0;
+    font-size: 1rem;
 }
 
-#facts li {
-    padding-left: 1rem;
+#experiments li {
     margin-bottom: 0.5rem;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    color: #888;
+/* Experiments section typography and controls */
+#experiments h2 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e0e0e0;
+}
+
+#experiments p {
+    margin: 0 0 0.75rem 0;
+    color: #bbbbbb;
+    font-size: 0.95rem;
+}
+
+#experiments a {
+    color: #66b3ff;
+    text-decoration: none;
+}
+
+#experiments a:hover {
+    text-decoration: underline;
+}
+
+#experiments button {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+#experiments button:hover {
+    background-color: #444;
 }
