@@ -22,7 +22,8 @@ const COLOR_EMOJI = {
 const TILE_PX = 50;
 const GAP_PX = 2;
 const STEP_PX = TILE_PX + GAP_PX; // grid gap is 2px
-const ANIM_MS = 120;
+const SWAP_MS = 120; // swap duration
+const FALL_MS = 40;  // fall duration (2x faster)
 const SWIPE_THRESHOLD_PX = 18; // minimal movement to consider a swipe on touch
 let isAnimating = false;
 let isResolving = false;
@@ -295,9 +296,9 @@ function attemptSwap(a, b) {
             elB.style.transform = 'none';
             setTimeout(() => {
                 isAnimating = false;
-            }, ANIM_MS);
+            }, SWAP_MS);
         }
-    }, ANIM_MS);
+    }, SWAP_MS);
     return ok;
 }
 
@@ -422,23 +423,24 @@ function animateMoveIntoSquareBelow() {
             moves++;
             const el = candies[i];
             // Animate down
+            const prevT = el.style.transition;
+            el.style.transition = `transform ${FALL_MS}ms ease`;
             el.style.transform = `translate(0, ${STEP_PX}px)`;
             setTimeout(() => {
                 // Commit the move
                 setColor(candies[below], color);
                 setColor(candies[i], 'blank');
                 // Reset transform instantly
-                const prevT = el.style.transition;
                 el.style.transition = 'none';
                 el.style.transform = 'none';
                 void el.offsetWidth;
                 el.style.transition = prevT || '';
-            }, ANIM_MS);
+            }, FALL_MS);
         }
     }
     if (moves > 0) {
         isAnimating = true;
-        setTimeout(() => { isAnimating = false; }, ANIM_MS + 5);
+        setTimeout(() => { isAnimating = false; }, FALL_MS + 5);
     }
 }
 
@@ -499,8 +501,6 @@ function shuffleBoard() {
 
 const btnReset = document.getElementById('btn-reset');
 if (btnReset) btnReset.addEventListener('click', resetBoard);
-const btnShuffle = document.getElementById('btn-shuffle');
-if (btnShuffle) btnShuffle.addEventListener('click', shuffleBoard);
 
 window.setInterval(function() {
     if (isAnimating || isResolving) return;
@@ -537,4 +537,4 @@ window.setInterval(function() {
     // Nothing to clear and board is settled; ensure top is refilled
     animateMoveIntoSquareBelow();
     if (!isAnimating) fillBlanks();
-}, 120);
+}, 60);

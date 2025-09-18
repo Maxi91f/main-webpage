@@ -35,7 +35,7 @@ h1 {
     line-height: 50px; /* vertical centering for emoji */
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", "EmojiOne Color", system-ui, sans-serif;
     cursor: pointer;
-    border: 1px solid #555;
+    border: 0;
     box-sizing: border-box;
     transition: background-color 150ms ease, transform 120ms ease;
     user-select: none;
